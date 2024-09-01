@@ -111,6 +111,7 @@ body {
   .main__button {
     width: 400px;
     height: 400px;
+    background-size: 300px 300px;
   }
 }
 @media (max-width: 480px) {
@@ -270,10 +271,12 @@ body {
   font-size: 30px;
 }
 .up__cards {
-  padding: 200px 100px;
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
   justify-content: space-between;
+  height: 100%;
 }
 .up__card {
   padding: 0 0 60px 0;

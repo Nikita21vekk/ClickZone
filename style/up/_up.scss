@@ -21,10 +21,13 @@
         font-size: 30px;
     }
     &__cards {
-        padding: 200px 100px;
+        padding-top: 50px;
         display: flex;
         flex-wrap: wrap;
+        overflow: scroll;
         justify-content: space-between;
+        height: 100%;
+        
     }
     &__card {
         padding: 0 0 60px 0;
