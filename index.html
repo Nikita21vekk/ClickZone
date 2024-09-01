@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickZone</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="menu">
+        <img class="menu__logo" src="./style/img/logo_menu.png" alt="">
+        <div class="menu__btns">
+            <div class="container">
+                <a href="#" class="menu__btn">
+                  <span onclick="playaudio_main()" id="menu__play">ИГРАТЬ</span>
+                </a>
+            </div>
+            <div class="container">
+                <a href="#" class="menu__btn">
+                  <span>НАСТРОЙКИ</span>
+                </a>
+            </div>
+            <div class="container">
+                <a href="#" class="menu__btn">
+                  <span>АВТОРЫ</span>
+                </a>
+            </div>
+            <div class="container">
+                <a href="#" class="menu__btn">
+                  <span>ВЫЙТИ</span>
+                </a>
+            </div>
+        </div>
+        
+
+    </div>
+    <audio id = "idAudio">
+		<source src = "./style/audio/up_music.mp3" type = "audio/ogg" >
+		<source src = "./style/audio/up_music.mp3" type ="audio/mpeg">The browser is not supporting the audio element...
+	</audio>
+    <audio id = "main_music">
+		<source src = "./style/audio/main_music.mp3" type = "audio/ogg" >
+		<source src = "./style/audio/main_music.mp3" type ="audio/mpeg">The browser is not supporting the audio element...
+	</audio>
+
+    <!-- <audio class="main_play" src="./style/audio/main_music.mp3" autoplay></audio> -->
+
+    <header class="header">
+        <div class="top">
+            <div class="top__bar">
+                <img class="top__bar-img" src="./style/img/icon/level_logo.svg" alt="">
+                <p class="top__bar-text">Уровень: <span class="level_score-top">1</span></p>
+            </div>
+            <div class="top__bar">
+                <img class="top__bar-img" src="./style/img/icon/priority_logo.svg" alt="">
+                <p class="top__bar-text">Приоритет: 0</p>
+            </div>
+            <div class="top__bar">
+                <img class="top__bar-img" src="./style/img/icon/rank_logo.svg" alt="">
+                <p class="top__bar-text">Ранг: бомж</p>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="balance__content">
+            <h1 class="balance">0</h1>
+            <img src="./style/img/balance_logo.svg" alt="Деньги">
+        </div>
+        <button id="btn" class="main__button">
+        <p class="invisible__text">+<span>1</span></p>
+        </button>
+        <div class="shop">
+            <button class="close__button close__button-shop">
+                <img class="close__button-img" src="./style/img/icon/shop_close_icon.webp" alt="">
+            </button>
+            <p class="shop__title">Магазин</p>
+        </div>
+        <div class="up">
+            <button onclick="stopaudio_up()" class="close__button close__button-up">
+                <img class="close__button-img" src="./style/img/icon/shop_close_icon.webp" alt="">
+            </button>
+            <p class="up__title">Улучшения</p>
+            <div class="up__cards">
+                <article class="up__card">
+                    <p class="up__card-title">Уровень</p>
+                    <p class="up__card-level">Текуший уровень: <span class="up__wrapper"><span class="level_score">1</span><img class="up__card-img-lvl" src="./style/img/icon/level_logo.svg" alt=""></span></p>
+                    <p class="up__card-info">Цена улучшения: <span class="up__wrapper"><span id="lvl_up_money" class="level_score-money">100</span> <img class="up__card-img" src="./style/img/balance_logo.svg" alt=""></span></p>
+                    <div class="up__card-buy">
+                        <button class="up__card-btn" id="up__btn">Улучшить</button>
+                        <img class="up__card-logo" src="./style/img/icon/buy_logo.svg" alt="">
+                    </div>
+                </article>
+                <article class="up__card">
+                    <p class="up__card-title">Приоритет</p>
+                    <p class="up__card-level">Текуший приоритет: <span class="up__wrapper"><span class="level_score">0</span><img class="up__card-img-lvl" src="./style/img/icon/level_logo.svg" alt=""></span></p>
+                    <p class="up__card-info">Цена улучшения: <span class="up__wrapper"><span id="lvl_up_money" class="level_score-money">5000</span> <img class="up__card-img" src="./style/img/balance_logo.svg" alt=""></span></p>
+                    <div class="up__card-buy">
+                        <button class="up__card-btn" id="shop__btn1">Улучшить</button>
+                        <img class="up__card-logo" src="./style/img/icon/buy_logo.svg" alt="">
+                    </div>
+                </article>
+                <article class="up__card">
+                    <p class="up__card-title">Тап</p>
+                    <p class="up__card-level">Текуший уровень: <span class="up__wrapper"><span class="level_score">1</span><img class="up__card-img-lvl" src="./style/img/icon/level_logo.svg" alt=""></span></p>
+                    <p class="up__card-info">Цена улучшения: <span class="up__wrapper"><span id="lvl_up_money" class="level_score-money">100</span> <img class="up__card-img" src="./style/img/balance_logo.svg" alt=""></span></p>
+                    <div class="up__card-buy">
+                        <button class="up__card-btn" id="shop__btn1">Улучшить</button>
+                        <img class="up__card-logo" src="./style/img/icon/buy_logo.svg" alt="">
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="burse">
+            <button class="close__button close__button-burse">
+                <img class="close__button-img" src="./style/img/icon/shop_close_icon.webp" alt="">
+            </button>
+            <p class="burse__title">Биржа</p>
+        </div>
+        <!-- <div class="shop">
+            <button class="close__button">
+                <img class="close__button-img" src="./style/img/icon/shop_close_icon.webp" alt="">
+            </button>
+            <p class="shop__title">Магазин</p>
+        </div> -->
+        <!-- <div class="shop">
+            <button class="close__button">
+                <img class="close__button-img" src="./style/img/icon/shop_close_icon.webp" alt="">
+            </button>
+            <p class="shop__title">Магазин</p>
+        </div> -->
+    </main>
+    <footer class="footer">
+        <div class="bottom">
+            <button id="shop" class="bottom__bar">
+                <img class="bottom__bar-img" src="./style/img/icon/shop_icon.svg" alt="">
+                <p class="bottom__bar-text">Магазин</p>
+            </button>
+            <button onclick="playaudio_up()" id="up" class="bottom__bar">
+                <img class="bottom__bar-img" src="./style/img/icon/up_icon.svg" alt="">
+                <p class="bottom__bar-text">Улучшения</p>
+            </button>
+            <button id="burse" class="bottom__bar">
+                <img class="bottom__bar-img" src="./style/img/icon/burse_icon.svg" alt="">
+                <p class="bottom__bar-text">Биржа</p>
+            </button>
+            <button id="burse" class="bottom__bar">
+                <img class="bottom__bar-img" src="./style/img/icon/promo_logo.svg" alt="">
+                <p class="bottom__bar-text">Промокоды</p>
+            </button>
+            <button id="burse" class="bottom__bar">
+                <img class="bottom__bar-img" src="./style/img/icon/bonus_logo.png" alt="">
+                <p class="bottom__bar-text">Бонусы</p>
+            </button>
+            <button id="burse" class="bottom__bar">
+                <img class="bottom__bar-img" src="./style/img/icon/ruletka.png" alt="">
+                <p class="bottom__bar-text">Казино</p>
+            </button>
+        </div>
+    </footer>
+</body>
+</html>
